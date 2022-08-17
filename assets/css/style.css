@@ -184,8 +184,7 @@ main styling starts here
   height: 20%;
   position: relative;
   background-image: url(../images/minions.gif);
-  background-size: 100% 100%;
-  background-position: center;
+  background-size: 400% 400%;
   text-indent: -99999px;
   transition: all .3s;
 }
