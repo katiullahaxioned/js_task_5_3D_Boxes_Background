@@ -7,19 +7,27 @@ for (var i = 1; i <= 15; i++) {
 
 var squareTile = document.querySelectorAll(".square-tile");
 
+// add "background position values" to "squareTile object";
 function bgPosition(x, y, b) {
   var a = 0;
-  for(var i=x; i<y; i++) {
-    squareTile[i].style.backgroundPosition = `${a}% ${b}%`;
-    a += 33;
+  for (var i = x; i < y; i++) {
+    squareTile[i].style.backgroundPosition = a + "% " + b + "%";
+    a += 33.33;
   }
 }
 
-bgPosition(0, 4, 0);
-bgPosition(4, 8, 33);
-bgPosition(8, 12, 66);
-bgPosition(12, 16, 99);
+// "loop" to call "bgPosition() function" 4 times
+(function () {
+  var x = 0, y = 4, b = 0;
+  for (var z = 1; z <= 4; z++) {
+    bgPosition(x, y, b);
+    x += 4;
+    y += 4;
+    b += 33.33;
+  }
+})();
 
+// click event on control button
 control.addEventListener("click", function () {
   control.classList.add("control-active");
 
